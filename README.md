@@ -4,7 +4,7 @@ Eine App, die Ihnen eine Altersschätzung anhand eines Vornamens liefert.
 
 ## Beschreibung
 
-Folgende Funktionen sollen beinhaltet sein:
+Folgende Funktionen sind enthalten:
 
 - Namenseingabe
 
@@ -14,13 +14,13 @@ Folgende Funktionen sollen beinhaltet sein:
 
 - Neustart
 
-Für die Umsetzung kann die kostenlose und offene API von agify genutzt werden. (https://agify.io/).
+Für die Umsetzung wird die kostenlose und offene API von Agify verwendet. (https://agify.io/).
 
 Vorgaben:
 
 - Flutter als Framework
 
-- Architektur-Pattern deiner Wahl
+- Ein Architektur-Pattern ist freie Wahl
 
 - BLoC (präferiert) oder Riverpod als State Management Solution
 
