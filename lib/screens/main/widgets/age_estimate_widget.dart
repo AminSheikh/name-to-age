@@ -8,10 +8,10 @@ class AgeEstimateWidget extends StatelessWidget {
   const AgeEstimateWidget({
     super.key,
     required this.name,
-    required this.age,
+    this.age,
   });
   final String name;
-  final int age;
+  final int? age;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +22,24 @@ class AgeEstimateWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-           Text(
-            "Age Estimation for\n$name is $age",
-            textAlign: TextAlign.center,
-            style:const  TextStyle(
-              fontSize: 29,
-              fontWeight: FontWeight.bold,
+          if (age != null)
+            Text(
+              "Age Estimation for\n$name is $age",
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 29,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          ),
+          if (age == null)
+            Text(
+              "Age Estimation for\n'$name' was not possible\nplease try again with another name",
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           const SizedBox(
             height: 60,
           ),

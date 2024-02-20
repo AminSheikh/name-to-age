@@ -38,15 +38,40 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ),
         body: BlocConsumer<MainScreenBloc, MainScreenState>(
-          listenWhen: (previous, current) {
-            return current.toString() == "InitMainScreenState";
-          },
           listener: (context, state) {
-            nameController.clear();
+            if (state.toString() == "InitMainScreenState") {
+              nameController.clear();
+            } else if (state.toString() == "ErrorMainScreenState") {
+              nameController.clear();
+              showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    contentPadding:
+                        const EdgeInsets.all(30).copyWith(bottom: 10),
+                    content: const Text(
+                      "There was a problem\nplease try again",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.maybePop(context),
+                        child: const Text("close"),
+                      ),
+                    ],
+                  );
+                },
+              );
+            }
           },
           builder: (context, state) {
             if (state.toString() == "AgeLoadedMainScreenState") {
-              return  AgeEstimateWidget(
+              return AgeEstimateWidget(
                 name: (state as AgeLoadedMainScreenState).name,
                 age: (state).age,
               );

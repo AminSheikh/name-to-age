@@ -4,7 +4,7 @@ abstract class MainScreenState extends Equatable {
   MainScreenState();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 /// Initial State
@@ -21,22 +21,19 @@ class AgeLoadingMainScreenState extends MainScreenState {
 
   @override
   String toString() => 'AgeLoadingMainScreenState';
-
-  @override
-  List<Object> get props => [];
 }
 
 /// Age Loaded
 class AgeLoadedMainScreenState extends MainScreenState {
   AgeLoadedMainScreenState(this.name, this.age);
   final String name;
-  final int age;
+  final int? age;
 
   @override
   String toString() => 'AgeLoadedMainScreenState';
 
   @override
-  List<Object> get props => [name, age];
+  List<Object?> get props => [name, age];
 }
 
 class ErrorMainScreenState extends MainScreenState {

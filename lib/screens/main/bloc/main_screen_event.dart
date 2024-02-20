@@ -32,8 +32,8 @@ class GetAgeEstimationEvent extends MainScreenEvent {
     try {
       yield AgeLoadingMainScreenState();
       final result = await useAgeService().getAgeEstimation(name);
-      if (result.age == null) return;
-      yield AgeLoadedMainScreenState(result.name ?? name, result.age!);
+      yield AgeLoadedMainScreenState(result.name ?? name, result.age);
+      
     } catch (_, stackTrace) {
       developer.log('$_',
           name: 'LoadMainScreenEvent', error: _, stackTrace: stackTrace);
