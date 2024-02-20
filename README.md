@@ -1,16 +1,26 @@
 # name_to_age
 
-A new Flutter project.
+Eine App, die Ihnen eine Altersschätzung anhand eines Vornamens liefert.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Folgende Funktionen sollen beinhaltet sein:
 
-A few resources to get you started if this is your first Flutter project:
+Namenseingabe
+Senden
+Ergebnis
+Neustart
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Zur Umsetzung kannst du die kostenlose und offene API von agify nutzen (https://agify.io/).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Vorgaben:
+
+Flutter als Framework
+Architektur-Pattern deiner Wahl
+BLoC (präferiert) oder Riverpod als State Management Solution
+Versuche, diesen kleinen Use Case so realitätsnah wie möglich zu entwickeln, damit wir einen guten Einblick in dein Vorgehen erhalten. Folgende User Stories dienen als Abnahmekriterien:
+
+Als App-Nutzer möchte ich das geschätzte Alter zu einem eingegebenen Namen erfahren.
+
+Als App-Nutzer möchte ich die Einschätzung mit einem anderen Namen wiederholen können.
+
